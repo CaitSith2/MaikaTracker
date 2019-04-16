@@ -17,3 +17,6 @@ cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
+
+before_script:
+  - git clone git@github.com:sg4e/FF4StatsLib.git ../FF4StatsLib
