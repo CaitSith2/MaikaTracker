@@ -26,6 +26,14 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 
+configurations.all {
+    if (file("../FF4StatsLib").exists()) {
+        resolutionStrategy.dependencySubstitution {
+            substitute project(":FF4StatsLib") with module("com.github.sg4e:FF4StatsLib:master-SNAPSHOT")
+        }
+    }
+}
+
 dependencies {
 
     compile 'com.glazedlists:glazedlists:1.11.0'
