@@ -18,10 +18,14 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
+before_deploy:
+  - export GIT_TAG=$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER
+
 deploy:
   skip_cleanup: true
   provider: releases
   api_key: $GH_TOKEN
+  name: MaikaTracker $(date +'%d.%m.%Y %R')
   file:
     - "build/libs/MaikaTracker.jar"
   on:
