@@ -167,8 +167,8 @@ public final class MaikaTracker extends javax.swing.JFrame {
     
     public FlagSet flagset = null;
     
-    private static JsonFiles jsonFiles = new JsonFiles();
-    private static TextFiles textFiles = new TextFiles();
+    private static final JsonFiles jsonFiles = new JsonFiles();
+    private static final TextFiles textFiles = new TextFiles();
     
     private final JFileChooser fileChooser = new JFileChooser();
     
@@ -722,7 +722,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
         if(keyItem == null)
             return null;
         Optional<KeyItemPanel> map = getKeyItemPanelsStream()
-                .filter(kip -> keyItem.equals(kip.getKeyItem().getSpoiler()))
+                .filter(kip -> kip.getKeyItem().getSpoilerEntries().contains(keyItem))
                 .findAny()
                 .map(kip -> kip);
         return map.isPresent() ? map.get() : null;
@@ -2219,25 +2219,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
         return null;
     }
     
-    private void parseSpoilerLogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parseSpoilerLogButtonActionPerformed
-        List<String> spoilerLogLines = new ArrayList<>();
-        fileChooser.setFileFilter(textFiles);
-        fileChooser.setCurrentDirectory(new File(prefs.get(SPOILERLOG_DIRECTORY_ID, "")));
-        if(fileChooser.showOpenDialog(this) != JFileChooser.APPROVE_OPTION) return;
-        try {
-            BufferedReader br = Files.newBufferedReader(fileChooser.getSelectedFile().toPath());
-            Stream <String> lines = br.lines().map(str -> str);
-            lines.forEach(spoilerLogLines::add);
-            lines.close();
-            prefs.put(SPOILERLOG_DIRECTORY_ID, fileChooser.getSelectedFile().getParent());
-        }
-        catch (Exception ex) {
-            return;
-        }
-                
-        if (!spoilerLogLines.get(0).equals("Final Fantasy IV: Free Enterprise Spoiler Log"))
-            return;
-        
+    private void parseAexodenSpoilderLog(List<String> spoilerLogLines) {
         flagsTextField.setText(fileChooser.getSelectedFile().toString());
         resetButton.doClick();
         
@@ -2564,6 +2546,58 @@ public final class MaikaTracker extends javax.swing.JFrame {
                 .forEach(ki -> ki.setActive(true));
         locationsVisited.add(KeyItemLocation.START);
         updateLogic();
+    }
+    
+    private static final Pattern SPLITTER = Pattern.compile(
+            "^  (?<Left>.+)(?: [.]+ )(?<Right>.+)$"
+    );
+    
+    private void parseFreeEnterpriseSpoilerLog(List<String> spoilerLogLines) {
+        int logOffset = 0;
+        String line;
+        Matcher matcher;
+        while(!spoilerLogLines.get(++logOffset).startsWith("BINFLAGS:   ")) {}
+        flagsTextField.setText(spoilerLogLines.get(logOffset).replace("BINFLAGS:   ", "") +
+                "." + spoilerLogLines.get(logOffset+2).replace("SEED:       ", ""));
+        resetButton.doClick();
+        logOffset += 5;
+        
+        while((matcher = SPLITTER.matcher(spoilerLogLines.get(logOffset++))).find()) {
+            String location = matcher.group("Right");
+            String item = matcher.group("Left");
+            LOG.debug("Item {} at Location {}",item,location);
+            try {
+                KeyItemPanel kip = getPanelForKeyItem(item);
+                LOG.debug("Item {} matched to KeyItemMetadata {}", item, kip.getKeyItem());
+            }
+            catch (Exception ex) {
+                LOG.debug("KeyItemMetadata not found for Item {}", item);
+            }
+        }
+    }
+    
+    private void parseSpoilerLogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parseSpoilerLogButtonActionPerformed
+        List<String> spoilerLogLines = new ArrayList<>();
+        fileChooser.setFileFilter(textFiles);
+        fileChooser.setCurrentDirectory(new File(prefs.get(SPOILERLOG_DIRECTORY_ID, "")));
+        if(fileChooser.showOpenDialog(this) != JFileChooser.APPROVE_OPTION) return;
+        try {
+            BufferedReader br = Files.newBufferedReader(fileChooser.getSelectedFile().toPath());
+            Stream <String> lines = br.lines().map(str -> str);
+            lines.forEach(spoilerLogLines::add);
+            lines.close();
+            prefs.put(SPOILERLOG_DIRECTORY_ID, fileChooser.getSelectedFile().getParent());
+        }
+        catch (Exception ex) {
+            return;
+        }
+                
+        if (spoilerLogLines.get(0).equals("Final Fantasy IV: Free Enterprise Spoiler Log"))
+            parseAexodenSpoilderLog(spoilerLogLines);
+        else if (spoilerLogLines.get(0).equals("--------------------------------------------------------------------------------")
+                && spoilerLogLines.get(1).startsWith("VERSION:")
+                && spoilerLogLines.get(3).startsWith("FLAGS:"))
+            parseFreeEnterpriseSpoilerLog(spoilerLogLines);
     }//GEN-LAST:event_parseSpoilerLogButtonActionPerformed
 
     private void calculateXp(int xpGained, boolean commit) {

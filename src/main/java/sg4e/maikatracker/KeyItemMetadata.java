@@ -17,6 +17,9 @@
 package sg4e.maikatracker;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import org.apache.logging.log4j.LogManager;
@@ -28,35 +31,35 @@ import sg4e.ff4stats.fe.KeyItem;
  * @author sg4e
  */
 public enum KeyItemMetadata {
-    CRYSTAL(KeyItem.CRYSTAL, "1THE", "[KEY] (crystal) Crystal"),
+    CRYSTAL(KeyItem.CRYSTAL, "1THE", "[KEY] (crystal) Crystal", "Crystal"),
     PASS(KeyItem.PASS, "2", "Pass"),
-    HOOK(KeyItem.HOOK, "3", "[KEY] Hook"),
-    DARKNESS(KeyItem.DARKNESS, "4", "[KEY] (crystal) Darkness"),
-    EARTH(KeyItem.EARTH, "5", "[KEY] (crystal) Earth"),
-    TWIN_HARP(KeyItem.TWIN_HARP, "6", "[KEY] (harp) TwinHarp"),
-    PACKAGE(KeyItem.PACKAGE, "7", "[KEY] Package"),
-    SAND_RUBY(KeyItem.SAND_RUBY, "8", "[KEY] SandRuby"),
-    BARON_KEY(KeyItem.BARON_KEY, "9", "[KEY] (key) Baron"),
-    MAGMA_KEY(KeyItem.MAGMA_KEY, "10", "[KEY] (key) Magma"),
-    TOWER_KEY(KeyItem.TOWER_KEY, "11", "[KEY] (key) Tower"),
-    LUCA_KEY(KeyItem.LUCA_KEY, "12", "[KEY] (key) Luca"),
-    ADAMANT(KeyItem.ADAMANT, "13", "[KEY] Adamant"),
-    LEGEND(KeyItem.LEGEND, "14", "[KEY] (holy sword) Legend"),
-    PAN(KeyItem.PAN, "15", "[KEY] Pan"),
-    SPOON(KeyItem.SPOON, "16", "[KEY] (dagger) Spoon"),
-    RAT_TAIL(KeyItem.RAT_TAIL, "17", "[KEY] (tail) Rat"),
-    PINK_TAIL(KeyItem.PINK_TAIL, "18", "[KEY] (tail) Pink");
+    HOOK(KeyItem.HOOK, "3", "[KEY] Hook", "Hook"),
+    DARKNESS(KeyItem.DARKNESS, "4", "[KEY] (crystal) Darkness", "Darkness Crystal"),
+    EARTH(KeyItem.EARTH, "5", "[KEY] (crystal) Earth", "Earth Crystal"),
+    TWIN_HARP(KeyItem.TWIN_HARP, "6", "[KEY] (harp) TwinHarp", "TwinHarp"),
+    PACKAGE(KeyItem.PACKAGE, "7", "[KEY] Package", "Package"),
+    SAND_RUBY(KeyItem.SAND_RUBY, "8", "[KEY] SandRuby", "SandRuby"),
+    BARON_KEY(KeyItem.BARON_KEY, "9", "[KEY] (key) Baron", "Baron Key"),
+    MAGMA_KEY(KeyItem.MAGMA_KEY, "10", "[KEY] (key) Magma", "Magma Key"),
+    TOWER_KEY(KeyItem.TOWER_KEY, "11", "[KEY] (key) Tower", "Tower Key"),
+    LUCA_KEY(KeyItem.LUCA_KEY, "12", "[KEY] (key) Luca", "Luca Key"),
+    ADAMANT(KeyItem.ADAMANT, "13", "[KEY] Adamant", "Adamant"),
+    LEGEND(KeyItem.LEGEND, "14", "[KEY] (holy sword) Legend", "Legend Sword"),
+    PAN(KeyItem.PAN, "15", "[KEY] Pan", "Pan"),
+    SPOON(KeyItem.SPOON, "16", "[KEY] (dagger) Spoon", "Spoon"),
+    RAT_TAIL(KeyItem.RAT_TAIL, "17", "[KEY] (tail) Rat", "Rat Tail"),
+    PINK_TAIL(KeyItem.PINK_TAIL, "18", "[KEY] (tail) Pink", "Pink Tail");
     
     private final KeyItem ki;
     private ImageIcon gray, color, checked;
     private String imageName;
-    private String spoilerEntry;
+    private Set<String> spoilerEntries;
     
     private static final Logger LOG = LogManager.getLogger();
     
-    private KeyItemMetadata(KeyItem ki, String imageId, String spoiler) {
+    private KeyItemMetadata(KeyItem ki, String imageId, String... spoiler) {
         this.ki = ki;
-        spoilerEntry = spoiler;
+        spoilerEntries = new HashSet<>(Arrays.asList(spoiler));
         imageName = imageId + ki.toString().replaceAll(" ", "");
         String baseUrl = "key-items/%s/FFIVFE-Icons-" + imageName + "-";
         String grayUrl = String.format(baseUrl, "grayscale") + "Gray.png";
@@ -96,7 +99,7 @@ public enum KeyItemMetadata {
         return imageName;
     }
     
-    public String getSpoiler() {
-        return spoilerEntry;
+    public Set<String> getSpoilerEntries() {
+        return spoilerEntries;
     }
 }
