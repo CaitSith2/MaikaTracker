@@ -2565,13 +2565,96 @@ public final class MaikaTracker extends javax.swing.JFrame {
         while((matcher = SPLITTER.matcher(spoilerLogLines.get(logOffset++))).find()) {
             String location = matcher.group("Right");
             String item = matcher.group("Left");
-            LOG.debug("Item {} at Location {}",item,location);
-            try {
-                KeyItemPanel kip = getPanelForKeyItem(item);
-                LOG.debug("Item {} matched to KeyItemMetadata {}", item, kip.getKeyItem());
-            }
-            catch (Exception ex) {
-                LOG.debug("KeyItemMetadata not found for Item {}", item);
+            KeyItemPanel kip = getPanelForKeyItem(item);
+            switch(location) {
+                case "Starting item":
+                    kip.setLocation(KeyItemLocation.START);
+                    break;
+                case "Antlion Nest item":
+                    kip.setLocation(KeyItemLocation.ANTLION);
+                    break;
+                case "Defend Fabul reward item":
+                    kip.setLocation(KeyItemLocation.FABUL);
+                    break;
+                case "Mt. Ordeals item":
+                    kip.setLocation(KeyItemLocation.ORDEALS);
+                    break;
+                case "Baron Inn item":
+                    kip.setLocation(KeyItemLocation.BARON_INN);
+                    break;
+                case "Baron Castle item":
+                    kip.setLocation(KeyItemLocation.BARON_CASTLE);
+                    break;
+                case "Edward/Toroia item":
+                    kip.setLocation(KeyItemLocation.TOROIA);
+                    break;
+                case "Cave Magnes item":
+                    kip.setLocation(KeyItemLocation.DARK_ELF);
+                    break;
+                case "Zot item":
+                    kip.setLocation(KeyItemLocation.ZOT);
+                    break;
+                case "Lower Bab-il item (Tower Key slot)":
+                    kip.setLocation(KeyItemLocation.TOP_BABIL);
+                    break;
+                case "Super Cannon destruction item":
+                    kip.setLocation(KeyItemLocation.LOW_BABIL);
+                    break;
+                case "Dwarf Castle/Luca item":
+                    kip.setLocation(KeyItemLocation.DWARF_CASTLE);
+                    break;
+                case "Sealed Cave item":
+                    kip.setLocation(KeyItemLocation.SEALED_CAVE);
+                    break;
+                case "Town of Monsters chest item":
+                    kip.setLocation(KeyItemLocation.SUMMONED_MONSTERS_CHEST);
+                    break;
+                case "Rat Tail trade item":
+                    kip.setLocation(KeyItemLocation.RAT_TAIL);
+                    break;
+                case "Found Yang item (Pan slot)":
+                    kip.setLocation(KeyItemLocation.SHEILA_PANLESS);
+                    break;
+                case "Pan trade item (Spoon slot)":
+                    kip.setLocation(KeyItemLocation.SHEILA_PAN);
+                    break;
+                case "Town of Monsters queen item (Asura slot)":
+                    kip.setLocation(KeyItemLocation.ASURA);
+                    break;
+                case "Town of Monsters king item (Levia slot)":
+                    kip.setLocation(KeyItemLocation.LEVIATAN);
+                    break;
+                case "Baron Basement item (Odin slot)":
+                    kip.setLocation(KeyItemLocation.ODIN);
+                    break;
+                case "Wake Yang item (Sylph slot)":
+                    kip.setLocation(KeyItemLocation.SYLPH);
+                    break;
+                case "Cave Bahamut item":
+                    kip.setLocation(KeyItemLocation.BAHAMUT);
+                    break;
+                case "Lunar Subterrane altar 1 (Murasame slot)":
+                    kip.setLocation(KeyItemLocation.PALE_DIM);
+                    break;
+                case "Lunar Subterrane altar 2 (Crystal Sword slot)":
+                    kip.setLocation(KeyItemLocation.WYVERN);
+                    break;
+                case "Lunar Subterrane altar 3 (White Spear slot)":
+                    kip.setLocation(KeyItemLocation.PLAGUE);
+                    break;
+                case "Lunar Subterrane pillar chest 1 (Ribbon slot)":
+                case "Lunar Subterrane pillar chest 2 (Ribbon slot)":
+                    kip.setLocation(KeyItemLocation.DLUNAR);
+                    break;
+                case "Lunar Subterrane altar 4 (Masamune slot)":
+                    kip.setLocation(KeyItemLocation.OGOPOGO);
+                    break;
+                case "D.Mist/Rydia's Mom item":
+                    kip.setLocation(KeyItemLocation.MIST);
+                    break;
+                case "Objective completion":
+                    kip.setLocation(KeyItemLocation.OBJECTIVE);
+                    break;
             }
         }
     }
