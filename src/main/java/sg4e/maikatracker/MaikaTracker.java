@@ -235,220 +235,220 @@ public final class MaikaTracker extends javax.swing.JFrame {
         //add maps
         final String zot = "zot";
         initMap(zot, "1", TOWER_OF_ZOT, "1F", "Tower of Zot 1F", 
-                new TreasureChest("Z1", 4, 3));
+                new TreasureChest("Z1", 4, 3, "Tower of Zot:1F - chest"));
         initMap(zot, "2", TOWER_OF_ZOT, "2F", "Tower of Zot 2F", 
-                new TreasureChest("Z2", 15, 7));
+                new TreasureChest("Z2", 15, 7, "Tower of Zot:2F - chest"));
         initMap(zot, "5", TOWER_OF_ZOT, "5F", "Tower of Zot 5F", 
-                new TreasureChest("Z3", 9, 11),
-                new TreasureChest("Z4", 23, 10),
-                new TreasureChest("Z5", 10, 11),
-                new TreasureChest("Z6", 14, 19));
+                new TreasureChest("Z3", 9, 11, "5F (through 4F center-left door) - top"),
+                new TreasureChest("Z4", 23, 10, "5F (through 4F center-left door) - bottom"),
+                new TreasureChest("Z5", 10, 11, "5F (through 4F center door) - chest"),
+                new TreasureChest("Z6", 14, 19, "5F (through 4F center-right door) - chest"));
         final String ebcast = "eblan-castle";
         initMap(ebcast, "1", EBLAN_CASTLE, "Left 1F", "Eblan Left Tower 1F", 
-                new TreasureChest("E1", 5, 11),
-                new TreasureChest("E6", 5, 1));
+                new TreasureChest("E1", 5, 11, "West tower 1F - right"),
+                new TreasureChest("E6", 5, 1, "West tower 1F - left"));
         initMap(ebcast, "2", EBLAN_CASTLE, "Left 2F", "Eblan Left Tower 2F", 
-                new TreasureChest("E2", 8, 8),
-                new TreasureChest("E3", 5, 10),
-                new TreasureChest("E4", 5, 11),
-                new TreasureChest("E5", 4, 4));
+                new TreasureChest("E2", 8, 8, "West tower 2F - bottom-right pot"),
+                new TreasureChest("E3", 5, 10, "West tower 2F - left chest"),
+                new TreasureChest("E4", 5, 11, "West tower 2F - right chest"),
+                new TreasureChest("E5", 4, 4, "West tower 2F - top-left pot"));
         initMap(ebcast, "3", EBLAN_CASTLE, "Center Foyer", "Eblan 1F", 
-                new TreasureChest("E7", 4, 13));
+                new TreasureChest("E7", 4, 13, "Eblan Castle:1F - chest"));
         initMap(ebcast, "4", EBLAN_CASTLE, "Center Hall", "Eblan 2F", 
-                new TreasureChest("E8", 3, 4),
-                new TreasureChest("E9", 4, 4),
-                new TreasureChest("E10", 3, 14),
-                new TreasureChest("E11", 4, 15),
-                new TreasureChest("E12", 4, 14));
+                new TreasureChest("E8", 3, 4, "2F - west room, top"),
+                new TreasureChest("E9", 4, 4, "2F - west room, bottom"),
+                new TreasureChest("E10", 3, 14, "2F - east room, top"),
+                new TreasureChest("E11", 4, 15, "2F - east room, bottom-right"),
+                new TreasureChest("E12", 4, 14, "2F - east room, bottom-left"));
         initMap(ebcast, "6", EBLAN_CASTLE, "Right 1F", "Eblan Right Tower 1F", 
-                new TreasureChest("E13", 5, 2),
-                new TreasureChest("E19", 5, 12));
+                new TreasureChest("E13", 5, 2, "East tower 1F - left"),
+                new TreasureChest("E19", 5, 12, "Eblan Castle:East tower 1F - right"));
         initMap(ebcast, "7", EBLAN_CASTLE, "Right 2F", "Eblan Right Tower 2F", 
-                new TreasureChest("E14", 5, 1),
-                new TreasureChest("E15", 6, 1),
-                new TreasureChest("E16", 3, 6),
-                new TreasureChest("E17", 5, 11),
-                new TreasureChest("E18", 6, 11));
+                new TreasureChest("E14", 5, 1, "East tower 2F - left side, top chest"),
+                new TreasureChest("E15", 6, 1, "East tower 2F - left side, bottom chest"),
+                new TreasureChest("E16", 3, 6, "Eblan Castle:East tower 2F - pot"),
+                new TreasureChest("E17", 5, 11, "East tower 2F - right side, top chest"),
+                new TreasureChest("E18", 6, 11, "East tower 2F - right side, bottom chest"));
         initMap(ebcast, "8", EBLAN_CASTLE, "Basement", "Eblan Basement", 
-                new TreasureChest("E20", 11, 2),
-                new TreasureChest("E21", 11, 3),
-                new TreasureChest("E22", 12, 8));
+                new TreasureChest("E20", 11, 2, "Basement - left"),
+                new TreasureChest("E21", 11, 3, "Basement - middle"),
+                new TreasureChest("E22", 12, 8, "Basement - right"));
         final String ebcave = "eblan-cave";
         initMap(ebcave, "1", EBLAN_CAVE, "Entrance", "Cave Eblana B1F", 
-                new TreasureChest("V1", 4, 18),
-                new TreasureChest("V2", 3, 22),
-                new TreasureChest("V3", 25, 26));
+                new TreasureChest("V1", 4, 18, "B1F - top middle"),
+                new TreasureChest("V2", 3, 22, "Cave Eblana:B1F - top right"),
+                new TreasureChest("V3", 25, 26, "Cave Eblana:B1F - bottom right"));
         initMap(ebcave, "infirmary", EBLAN_CAVE, "Infirmary", "Cave Eblana B2F Infirmary", 
-                new TreasureChest("V4", 7, 14),
-                new TreasureChest("V5", 5, 2));
+                new TreasureChest("V4", 7, 14, "Hospital - right right"),
+                new TreasureChest("V5", 5, 2, "Hospital - left pot"));
         initMap(ebcave, "p1", EBLAN_CAVE, "Pass 1", "Pass to Bab-il (south)", 
-                new TreasureChest("V6", 28, 8),
-                new TreasureChest("V7", 10, 4),
-                new TreasureChest("V8", 26, 10),
-                new TreasureChest("V11", 12, 20),
-                new TreasureChest("V12", 14, 20),
-                new TreasureChest("V13", 11, 12),
-                new TreasureChest("V14", 11, 16),
-                new TreasureChest("V15", 12, 16),
-                new TreasureChest("V16", 28, 15),
-                new TreasureChest("V17", 27, 27),
-                new TreasureChest("V18", 27, 28),
-                new TreasureChest("V19", 27, 29));
+                new TreasureChest("V6", 28, 8, "Pass to Bab-il (west half) - southwest entrance"),
+                new TreasureChest("V7", 10, 4, "Pass to Bab-il (west half) - northwest exit"),
+                new TreasureChest("V8", 26, 10, "Pass to Bab-il (west half) - bottom, through secret path"),
+                new TreasureChest("V11", 12, 20, "Pass to Bab-il (east half) - north entrance, secret path, top"),
+                new TreasureChest("V12", 14, 20, "Pass to Bab-il (east half) - north entrance, secret path, bottom"),
+                new TreasureChest("V13", 11, 12, "Pass to Bab-il (east half) - north entrance, left"),
+                new TreasureChest("V14", 11, 16, "Pass to Bab-il (east half) - north entrance, right top"),
+                new TreasureChest("V15", 12, 16, "Pass to Bab-il (east half) - north entrance, right bottom"),
+                new TreasureChest("V16", 28, 15, "Pass to Bab-il (east half) - bottom"),
+                new TreasureChest("V17", 27, 27, "Pass to Bab-il (east half) - southeast corner, left"),
+                new TreasureChest("V18", 27, 28, "Pass to Bab-il (east half) - southeast corner, middle"),
+                new TreasureChest("V19", 27, 29, "Pass to Bab-il (east half) - southeast corner, right"));
         initMap(ebcave, "p2", EBLAN_CAVE, "Pass 2", "Pass to Bab-il (north)", 
-                new TreasureChest("V9", 8, 14),
-                new TreasureChest("V10", 22, 18),
-                new TreasureChest("V20", 16, 18),
-                new TreasureChest("V21", 23, 29),
-                new TreasureChest("V22", 9, 17));
+                new TreasureChest("V9", 8, 14, "Pass to Bab-il (north connection) - top right"),
+                new TreasureChest("V10", 22, 18, "Exit - bottom left"),
+                new TreasureChest("V20", 16, 18, "Exit - middle left"),
+                new TreasureChest("V21", 23, 29, "Save Room - hidden chest"),
+                new TreasureChest("V22", 9, 17, "Exit - top left, through secret path"));
         final String upperBabil = "upper-babil";
         initMap(upperBabil, "1f", UPPER_BABIL, "1F", "Tower of Bab-il 1F (Upper)", 
-                new TreasureChest("U1", 4, 18),
-                new TreasureChest("U2", 12, 26));
-        initMap(upperBabil, "b1f", UPPER_BABIL, "B1F", "Tower of Bab-il B2F", 
-                new TreasureChest("U3", 20, 14));
-        initMap(upperBabil, "b2f", UPPER_BABIL, "B2F", "Tower of Bab-il B3F", 
-                new TreasureChest("U4", 21, 20));
-        initMap(upperBabil, "b3f", UPPER_BABIL, "B3F", "Tower of Bab-il B4F", 
-                new TreasureChest("U5", 18, 12));
-        initMap(upperBabil, "b4f", UPPER_BABIL, "B4F", "Tower of Bab-il B5F", 
-                new TreasureChest("U6", 15, 5));
+                new TreasureChest("U1", 4, 18, "Tower of Bab-il (upper):1F - top"),
+                new TreasureChest("U2", 12, 26, "Tower of Bab-il (upper):1F - right"));
+        initMap(upperBabil, "b1f", UPPER_BABIL, "B2F", "Tower of Bab-il B2F", 
+                new TreasureChest("U3", 20, 14, "B2F - chest (long bridge)"));
+        initMap(upperBabil, "b2f", UPPER_BABIL, "B3F", "Tower of Bab-il B3F", 
+                new TreasureChest("U4", 21, 20, "B3F - chest (ring bridge)"));
+        initMap(upperBabil, "b3f", UPPER_BABIL, "B4F", "Tower of Bab-il B4F", 
+                new TreasureChest("U5", 18, 12, "B4F - chest (U bridge)"));
+        initMap(upperBabil, "b4f", UPPER_BABIL, "B5F", "Tower of Bab-il B5F", 
+                new TreasureChest("U6", 15, 5, "B5F - chest (left of crystal room entrance)"));
         final String lowerBabil = "lower-babil";
         initMap(lowerBabil, "1f", LOWER_BABIL, "1F", "Tower of Bab-il 1F (Lower)", 
-                new TreasureChest("B1", 10, 5),
-                new TreasureChest("B2", 20, 6),
-                new TreasureChest("B3", 12, 26));
+                new TreasureChest("B1", 10, 5, "1F - left top"),
+                new TreasureChest("B2", 20, 6, "1F - left bottom"),
+                new TreasureChest("B3", 12, 26, "Tower of Bab-il (lower):1F - right"));
         initMap(lowerBabil, "2f", LOWER_BABIL, "2F", "Tower of Bab-il 2F", 
-                new TreasureChest("B4", 7, 8),
-                new TreasureChest("B5", 22, 15),
-                new TreasureChest("B6", 16, 23));
+                new TreasureChest("B4", 7, 8, "Tower of Bab-il (lower):2F - chest"),
+                new TreasureChest("B5", 22, 15, "2F - south room chest"),
+                new TreasureChest("B6", 16, 23, "2F - east room chest"));
         initMap(lowerBabil, "3f", LOWER_BABIL, "3F", "Tower of Bab-il 3F", 
-                new TreasureChest("B9", 19, 26),
-                new TreasureChest("B10", 11, 13),
-                new TreasureChest("B11", 25, 15));
+                new TreasureChest("B9", 19, 26, "3F - right"),
+                new TreasureChest("B10", 11, 13, "3F - top left"),
+                new TreasureChest("B11", 25, 15, "3F - bottom"));
         initMap(lowerBabil, "4f", LOWER_BABIL, "4F", "Tower of Bab-il 4F", 
-                new TreasureChest("B7", 19, 16),
-                new TreasureChest("B8", 23, 29),
-                new TreasureChest("B12", 17, 26),
-                new TreasureChest("B13", 8, 27));
+                new TreasureChest("B7", 19, 16, "4F (through 3F southeast door) - left"),
+                new TreasureChest("B8", 23, 29, "4F (through 3F southeast door) - right"),
+                new TreasureChest("B12", 17, 26, "4F - east left room chest"),
+                new TreasureChest("B13", 8, 27, "4F - northeast room chest"));
         initMap(lowerBabil, "5f", LOWER_BABIL, "5F", "Tower of Bab-il 5F", 
-                new TreasureChest("B14", 12, 6),
-                new TreasureChest("B15", 22, 29));
+                new TreasureChest("B14", 12, 6, "5F - left"),
+                new TreasureChest("B15", 22, 29, "5F - right"));
         initMap(lowerBabil, "7f", LOWER_BABIL, "7F", "Tower of Bab-il 7F", 
-                new TreasureChest("B16", 24, 16));
+                new TreasureChest("B16", 24, 16, "7F - chest"));
         final String sm = "sm";
         initMap(sm, "1", LAND_OF_SUMMONED_MONSTERS, "B1F", "Land of Monsters B1F", 
-                new TreasureChest("M1", 6, 26),
-                new TreasureChest("M2", 6, 8),
-                new TreasureChest("M3", 21, 25));
+                new TreasureChest("M1", 6, 26, "Land of Monsters:B1F - top right"),
+                new TreasureChest("M2", 6, 8, "B1F - top left, through secret path"),
+                new TreasureChest("M3", 21, 25, "Land of Monsters:B1F - bottom right"));
         initMap(sm, "2", LAND_OF_SUMMONED_MONSTERS, "B2F", "Land of Monsters B2F", 
-                new TreasureChest("M4", 25, 24),
-                new TreasureChest("M5", 5, 9));
+                new TreasureChest("M4", 25, 24, "Land of Monsters:B2F - bottom right"),
+                new TreasureChest("M5", 5, 9, "Land of Monsters:B2F - top left"));
         initMap(sm, "3", LAND_OF_SUMMONED_MONSTERS, "B3F", "Land of Monsters B3F", 
-                new TreasureChest("M6", 21, 3),
-                new TreasureChest("M7", 21, 4),
-                new TreasureChest("M8", 21, 5),
-                new TreasureChest("M9", 23, 11),
-                new TreasureChest("M10", 21, 25),
-                new TreasureChest("M11", 6, 18));
+                new TreasureChest("M6", 21, 3, "B3F - southwest room, through secret path, left"),
+                new TreasureChest("M7", 21, 4, "B3F - southwest room, through secret path, middle"),
+                new TreasureChest("M8", 21, 5, "B3F - southwest room, through secret path, right"),
+                new TreasureChest("M9", 23, 11, "B3F - bottom middle"),
+                new TreasureChest("M10", 21, 25, "B3F - bottom right"),
+                new TreasureChest("M11", 6, 18, "B3F - top"));
         final String sylph = "sylph";
         initMap(sylph, "s1", SYLPH_CAVE, "B1", "Sylvan Cave B1F", 
-                new TreasureChest("S1", 5, 28),
-                new TreasureChest("S2", 6, 28),
-                new TreasureChest("S3", 5, 29),
-                new TreasureChest("S4", 18, 3),
-                new TreasureChest("S5", 18, 4),
-                new TreasureChest("S6", 4, 5),
-                new TreasureChest("S7", 4, 6),
-                new TreasureChest("S8", 4, 7),
-                new TreasureChest("S9", 5, 10),
-                new TreasureChest("S10", 6, 10));
+                new TreasureChest("S1", 5, 28, "B1F (entry area) - east side, top"),
+                new TreasureChest("S2", 6, 28, "B1F (entry area) - east side, bottom"),
+                new TreasureChest("S3", 5, 29, "B1F (save area) - through northeast secret path"),
+                new TreasureChest("S4", 18, 3, "B1F (save area) - west end, left"),
+                new TreasureChest("S5", 18, 4, "B1F (save area) - west end, right"),
+                new TreasureChest("S6", 4, 5, "B1F (northwest area) - top row, left"),
+                new TreasureChest("S7", 4, 6, "B1F (northwest area) - top row, middle"),
+                new TreasureChest("S8", 4, 7, "B1F (northwest area) - top row, right"),
+                new TreasureChest("S9", 5, 10, "B1F (northwest area) - right side, top"),
+                new TreasureChest("S10", 6, 10, "B1F (northwest area) - right side, bottom"));
         initMap(sylph, "s2", SYLPH_CAVE, "B2", "Sylvan Cave B2F", 
-                new TreasureChest("S11", 6, 11),
-                new TreasureChest("S18", 13, 23+2),
-                new TreasureChest("S19", 15, 23+2),
-                new TreasureChest("S20", 13, 21+2),
-                new TreasureChest("S21", 15, 21+2),
-                new TreasureChest("S22", 28, 29),
-                new TreasureChest("S23", 29, 29),
-                new TreasureChest("S24", 28, 25),
-                new TreasureChest("S25", 27, 23),
-                new TreasureChest("S26", 29, 23));
+                new TreasureChest("S11", 6, 11, "B2F (west half) - north room, through secret path"),
+                new TreasureChest("S18", 13, 23+2, "B2F (east half) - square chamber, top right"),
+                new TreasureChest("S19", 15, 23+2, "B2F (east half) - square chamber, bottom right"),
+                new TreasureChest("S20", 13, 21+2, "B2F (east half) - square chamber, top left"),
+                new TreasureChest("S21", 15, 21+2, "B2F (east half) - square chamber, bottom left"),
+                new TreasureChest("S22", 28, 29, "B2F (east half) - pit chamber, right"),
+                new TreasureChest("S23", 29, 29, "B2F (east half) - pit chamber, bottom right"),
+                new TreasureChest("S24", 28, 25, "B2F (east half) - pit chamber, middle"),
+                new TreasureChest("S25", 27, 23, "B2F (east half) - pit chamber, top left"),
+                new TreasureChest("S26", 29, 23, "B2F (east half) - pit chamber, bottom left"));
         initMap(sylph, "s3", SYLPH_CAVE, "B3", "Sylvan Cave B3F", 
-                new TreasureChest("S12", 9, 1),
-                new TreasureChest("S15", 4, 10),
-                new TreasureChest("S16", 5, 11),
-                new TreasureChest("S17", 4, 11));
+                new TreasureChest("S12", 9, 1, "B3F (path to house) - left of entrance"),
+                new TreasureChest("S15", 4, 10, "B3F (northeast area) - top left"),
+                new TreasureChest("S16", 5, 11, "B3F (northeast area) - bottom right"),
+                new TreasureChest("S17", 4, 11, "B3F (northeast area) - top right"));
         initMap(sylph, "house", SYLPH_CAVE, "House", "Sylvan House", 
-                new TreasureChest("S13", 3, 13),
-                new TreasureChest("S14", 5, 13));
+                new TreasureChest("S13", 3, 13, "House - top"),
+                new TreasureChest("S14", 5, 13, "House - bottom"));
         initMap(sylph, "treasure", SYLPH_CAVE, "Treasure Room", "Sylvan Cave Treasure Room", 
-                new TreasureChest("S27", 5, 7),
-                new TreasureChest("S28", 5+2, 7),
-                new TreasureChest("S29", 5, 7+2),
-                new TreasureChest("S30", 5+2, 7+2),
-                new TreasureChest("S31", 5, 7+4),
-                new TreasureChest("S32", 5+2, 7+4));
+                new TreasureChest("S27", 5, 7, "Poison treasury - top left"),
+                new TreasureChest("S28", 5+2, 7, "Poison treasury - bottom left"),
+                new TreasureChest("S29", 5, 7+2, "Poison treasury - top middle"),
+                new TreasureChest("S30", 5+2, 7+2, "Poison treasury - bottom middle"),
+                new TreasureChest("S31", 5, 7+4, "Poison treasury - top right"),
+                new TreasureChest("S32", 5+2, 7+4, "Poison treasury - bottom right"));
         final String giant = "Giant";
         initMap(giant, "2", GIANT_OF_BABIL, "Chest", "Giant of Bab-il Chest", 
-                new TreasureChest("G1", 8, 9),
-                new TreasureChest("G2", 19, 11),
-                new TreasureChest("G3", 20, 21),
-                new TreasureChest("G4", 6, 27),
-                new TreasureChest("G5", 18, 14));
+                new TreasureChest("G1", 8, 9, "Chest - top left"),
+                new TreasureChest("G2", 19, 11, "Chest - bottom left"),
+                new TreasureChest("G3", 20, 21, "Chest - middle"),
+                new TreasureChest("G4", 6, 27, "Chest - top right"),
+                new TreasureChest("G5", 18, 14, "Chest - bottom right"));
         initMap(giant, "3", GIANT_OF_BABIL, "Stomach", "Giant of Bab-il Stomach", 
-                new TreasureChest("G6", 9, 19),
-                new TreasureChest("G7", 6, 26));
+                new TreasureChest("G6", 9, 19, "Stomach - center"),
+                new TreasureChest("G7", 6, 26, "Stomach - top right"));
         initMap(giant, "4", GIANT_OF_BABIL, "Passage", "Giant of Bab-il Passage", 
-                new TreasureChest("G8", 21, 14));
+                new TreasureChest("G8", 21, 14, "Passage - chest"));
         initMap(giant, "GrindFightManip", GIANT_OF_BABIL, "D-Machine Grind", "D-Machine Grind");
         final String lunar = "lunar";
         initMap(lunar, "path", LUNAR_PATH, "1F", "Lunar Path (west)", 
-                new TreasureChest("P1", 22, 26),
-                new TreasureChest("P2", 6, 28),
-                new TreasureChest("P3", 7, 29));
+                new TreasureChest("P1", 22, 26, "Lunar Path: - bottom right"),
+                new TreasureChest("P2", 6, 28, " - northeast chamber, top"),
+                new TreasureChest("P3", 7, 29, " - northeast chamber, right"));
         initMap(lunar, "b1", LUNAR_SUBTERRANE, "B1", "Lunar Subterrane B1", 
-                new TreasureChest("L1", 24, 6));
+                new TreasureChest("L1", 24, 6, "B1 - through secret path"));
         initMap(lunar, "b2", LUNAR_SUBTERRANE, "B2", "Lunar Subterrane B2", 
-                new TreasureChest("L2", 12, 26),
-                new TreasureChest("L3", 23, 25), 
-                new TreasureChest("L4", 4, 10));
+                new TreasureChest("L2", 12, 26, "B2 (route to altar) - chest"),
+                new TreasureChest("L3", 23, 25, "B2 (main route) - secret path chest"), 
+                new TreasureChest("L4", 4, 10, "B2 (main route) - top left"));
         initMap(lunar, "b3", LUNAR_SUBTERRANE, "B3", "Lunar Subterrane B3", 
-                new TreasureChest("L5", 16, 25),
-                new TreasureChest("L6", 24, 23),
-                new TreasureChest("L7", 28, 14));
+                new TreasureChest("L5", 16, 25, "B3 - secret path first chamber"),
+                new TreasureChest("L6", 24, 23, "B3 - secret path second chamber, top"),
+                new TreasureChest("L7", 28, 14, "B3 - secret path second chamber, left"));
         initMap(lunar, "b4", LUNAR_SUBTERRANE, "B4", "Lunar Subterrane B4", 
-                new TreasureChest("L8", 7, 28),
-                new TreasureChest("L9", 13, 8),
-                new TreasureChest("L12", 24, 6));
+                new TreasureChest("L8", 7, 28, "B4 - top right"),
+                new TreasureChest("L9", 13, 8, "B4 (west room) - chest"),
+                new TreasureChest("L12", 24, 6, "B4 - bottom left"));
         initMap(lunar, "b4passage", LUNAR_SUBTERRANE, "B4 Passage", "Lunar Subterrane B4 Passage", 
-                new TreasureChest("L10", 5, 23),
-                new TreasureChest("L11", 14, 2));
+                new TreasureChest("L10", 5, 23, "B4 (interior passage) - top right"),
+                new TreasureChest("L11", 14, 2, "B4 (interior passage) - bottom left"));
         initMap(lunar, "b5", LUNAR_SUBTERRANE, "B5", "Lunar Subterrane B5", 
-                new TreasureChest("L13", 9, 7),
-                new TreasureChest("L14", 13, 11),
-                new TreasureChest("L15", 11, 26),
-                new TreasureChest("L16", 16, 27),
-                new TreasureChest("L17", 20, 14),
-                new TreasureChest("L18", 20, 5),
-                new TreasureChest("L19", 27, 23),
-                new TreasureChest("L24", 15, 1));
+                new TreasureChest("L13", 9, 7, "B5 (main route) - top left"),
+                new TreasureChest("L14", 13, 11, "B5 (first interior passage) - chest"),
+                new TreasureChest("L15", 11, 26, "B5 (through first interior passage south exit) - chest"),
+                new TreasureChest("L16", 16, 27, "B5 (main route) - right"),
+                new TreasureChest("L17", 20, 14, "B5 (second interior passage) - chest"),
+                new TreasureChest("L18", 20, 5, "B5 (main route) - bottom left"),
+                new TreasureChest("L19", 27, 23, "B5 (PinkPuff room) - chest"),
+                new TreasureChest("L24", 15, 1, "B5 - on bridge to hidden altar"));
         initMap(lunar, "b6", LUNAR_SUBTERRANE, "B6", "Lunar Subterrane B6", 
-                new TreasureChest("L20", 5, 15),
-                new TreasureChest("L21", 5, 25),
-                new TreasureChest("L22", 17, 18),
-                new TreasureChest("L23", 27, 6),
-                new TreasureChest("L25", 21, 22));
+                new TreasureChest("L20", 5, 15, "B6 - left of entrance"),
+                new TreasureChest("L21", 5, 25, "B6 - right of entrance"),
+                new TreasureChest("L22", 17, 18, "B6 - by hidden bridge"),
+                new TreasureChest("L23", 27, 6, "B6 - en route to altar"),
+                new TreasureChest("L25", 21, 22, "B5 to B6 passage - chest", "B6 to B7 passage - chest"));
         initMap(lunar, "dlunar", LUNAR_SUBTERRANE, "D Lunar", "Lunar Subterrane B7 Treasure Room B", 
                 new TreasureChest("L26", 5, 2),
                 new TreasureChest("L27", 5, 4));
         initMap(lunar, "c1", LUNAR_CORE, "B1", "Lunar Core B1", 
-                new TreasureChest("C1", 11, 7));
+                new TreasureChest("C1", 11, 7, "Core B1 - chest"));
         initMap(lunar, "c2", LUNAR_CORE, "B2", "Lunar Core B2", 
-                new TreasureChest("C2", 10, 21),
-                new TreasureChest("C3", 24, 13));
+                new TreasureChest("C2", 10, 21, "Core B2 - top right"),
+                new TreasureChest("C3", 24, 13, "Core B2 - bottom"));
         initMap(lunar, "c3", LUNAR_CORE, "B3", "Lunar Core B3", 
-                new TreasureChest("C4", 14, 24),
-                new TreasureChest("C5", 15, 7));
+                new TreasureChest("C4", 14, 24, "Core B3 - right"),
+                new TreasureChest("C5", 15, 7, "Core B3 - left"));
         dungeonComboBox.setModel(new DefaultComboBoxModel<>(atlas.getAllDungeons().toArray(new String[0])));
         dungeonComboBox.addActionListener((ae) -> {
             String dungeon = (String) dungeonComboBox.getSelectedItem();
@@ -1022,6 +1022,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
                 label.setPartyMember(LevelData.RYDIA);
                 break;
             case "FuSoYa":
+            case "Fusoya":
                 label.setPartyMember(LevelData.FUSOYA);
                 break;
             case "Tellah":
@@ -2552,6 +2553,10 @@ public final class MaikaTracker extends javax.swing.JFrame {
             "^  (?<Left>.+)(?: [.]+ )(?<Right>.+)$"
     );
     
+    private static final Pattern TREASURE = Pattern.compile(
+            "^ {2,33}(?:(?<Map>.{2,28})(?: [.]{2,28} ))?(?<Item>.{2,20})(?: [.]{2,20} )(?<Chest>.{2,64})(?: [.]{2,64} .+)?$"
+    );
+    
     private void parseFreeEnterpriseSpoilerLog(List<String> spoilerLogLines) {
         int logOffset = 0;
         String line;
@@ -2655,6 +2660,72 @@ public final class MaikaTracker extends javax.swing.JFrame {
                 case "Objective completion":
                     kip.setLocation(KeyItemLocation.OBJECTIVE);
                     break;
+            }
+        }
+        
+        while(!spoilerLogLines.get(logOffset++).equals("CHARACTERS")) {}
+        while((matcher = SPLITTER.matcher(spoilerLogLines.get(logOffset++))).find()) {
+            LOG.debug("Location {} has character {}", matcher.group("Left"), matcher.group("Right"));
+            if(matcher.group("Left").equals("Starting character 1")) {
+                LOG.debug("Setting First starting character");
+                SetStartingMember(2, matcher.group("Right"));
+            }
+            if(matcher.group("Left").equals("Starting character 2")) {
+                LOG.debug("Setting Second starting character");
+                SetStartingMember(0, matcher.group("Right"));
+            }
+        }
+        
+        while(!spoilerLogLines.get(logOffset++).equals("BOSSES")) {}
+        while((matcher = SPLITTER.matcher(spoilerLogLines.get(logOffset++))).find()) {
+            String location = matcher.group("Left");
+            String boss = matcher.group("Right");
+            if(location.equals("(not available)")) {
+                LOG.debug("Boss {} is at the {}", boss, "Waterhag position");
+            }
+            else {
+                LOG.debug("Boss {} is at the {}", boss, location);
+            }
+        }
+        while(!spoilerLogLines.get(logOffset++).equals("TREASURE")) {}
+        String prevMap = null;
+        Map<String, String> chestLocations = new HashMap<>();
+        Map<String, String> mapLocations = new HashMap<>();
+        
+
+        while((matcher = TREASURE.matcher(spoilerLogLines.get(logOffset++))).find()) {
+            String map = matcher.group("Map");
+            String item = matcher.group("Item");
+            String chest = matcher.group("Chest");
+            if(!Util.isNullOrEmpty(map))
+                prevMap = map;
+            if(Util.isNullOrEmpty(prevMap))
+                continue;
+            
+            KeyItemPanel kip = getPanelForKeyItem(item);
+            String chestID = TreasureChest.valueOf(chest);
+            if(chestID == null)
+                chestID = TreasureChest.valueOf(prevMap + ":" + chest);
+            if(chestID == null) {
+                //LOG.debug("Could not get chest ID for {}:{}", prevMap, chest);
+            }            
+            else if (kip == null) {
+                //LOG.debug("Could not get KeyItemPanel for item {}", item);
+            }
+            else if (kip.isKnown()) {
+                //LOG.debug("Item {} was already found earlier in the spoiler log.", item);
+            }
+            if(chestID != null && kip != null && !kip.isKnown())
+                kip.setLocationInChest(getAtlas().getChestLabel(chestID));
+            
+            
+            if(TreasureChest.valueOf(chest) != null) {
+                if(!chestLocations.containsKey(chest)) {
+                    chestLocations.put(chest, item);
+                    mapLocations.put(chest, prevMap);
+                }
+                else
+                    LOG.debug("MaikaTracker location {} is found in Chest \"{}\", located at \"{}\", Already used by MaikaTracker location {} @ \"{}\"", item, chest, prevMap, chestLocations.get(chest), mapLocations.get(chest));
             }
         }
     }

@@ -16,6 +16,10 @@
  */
 package sg4e.maikatracker;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author sg4e
@@ -26,10 +30,13 @@ public class TreasureChest {
     private final int offsetX, offsetY;
     private final String id;
     
-    public TreasureChest(String id, int x, int y) {
+    private static final Map<String, String> SPOILER_ID = new HashMap<>();
+    
+    public TreasureChest(String id, int x, int y, String ... spoiler) {
         this.id = id;
         offsetX = x;
         offsetY = y;
+        Arrays.asList(spoiler).forEach(s -> SPOILER_ID.put(s, id));
     }
     
     public int getX() {
@@ -42,6 +49,10 @@ public class TreasureChest {
     
     public String getId() {
         return id;
+    }
+    
+    public static String valueOf(String spoiler) {
+        return SPOILER_ID.get(spoiler);
     }
     
 }
