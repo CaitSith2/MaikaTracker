@@ -161,7 +161,10 @@ public class PartyLabel extends StativeLabel {
     
     private Boolean memberAllowed(String member) {
         if(tracker.newFlagset()) {
-            return tracker.flagsetContainsAny("Cstart:" + member, "Conly:" + member) 
+            return tracker.flagsetContainsAny("Cstart:" + member, "Conly:" + member,
+                    "O1:char_" + member, "O2:char_" + member, "O3:char_" + member, 
+                    "O4:char_" + member, "O5:char_" + member, "O6:char_" + member, 
+                    "O7:char_" + member, "O8:char_" + member)
                     || (!tracker.flagsetContains("Cno:" + member) && !onlyMembers());
         }
         else {
