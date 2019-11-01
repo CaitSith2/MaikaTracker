@@ -117,6 +117,15 @@ public final class MaikaTracker extends javax.swing.JFrame {
         "Bahamut", "Pale Dim", "D.Lunars", "Plague", "Ogopogo", "Wyvern"
     };
     
+    private static final String[] SPOILER_BOSS_NAMES = {
+        "D.Mist", "Kaipo Officer/Soldiers", "Octomamm", "Antlion", "WaterHag", "MomBomb",
+        "Fabul gauntlet", "Milon", "Milon Z.", "D.Knight", "Baron Inn Guards",
+        "Karate", "Baigan", "Kainazzo", "Dark Elf (dragon)", "Magus Sisters", "Valvalis",
+        "Calbrena", "Golbez", "Lugae", "Dark Imps", "King/Queen Eblan",
+        "Rubicant", "EvilWall", "Elements", "CPU", "Odin", "Asura", "Leviatan",
+        "Bahamut", "Pale Dim", "D.Lunars", "Plague", "Ogopogo", "Wyvern"
+    };
+    
     private static final String[] SPOILER_BOSS_FORMATIONS = {
         "D.Mist x1", "Officer x1, Soldier x3", "Octomamm x1", "Antlion x1", "WaterHag x1", "MomBomb x1, Bomb x3, GrayBomb x3",
         "Fabul Gauntlet", "Milon x1, Ghast x4", "Milon Z. x1", "D.Knight x1", "Guard x2",
@@ -551,7 +560,9 @@ public final class MaikaTracker extends javax.swing.JFrame {
     }
     
     public StativeLabel loadBossIcon(int bossIndex) {
-        BossLabel label = new BossLabel(BOSS_RESOURCES[bossIndex], BOSS_NAMES[bossIndex], SPOILER_BOSS_LOCATIONS[bossIndex], SPOILER_BOSS_FORMATIONS[bossIndex]);        
+        BossLabel label = new BossLabel(BOSS_RESOURCES[bossIndex], BOSS_NAMES[bossIndex], 
+                SPOILER_BOSS_LOCATIONS[bossIndex], SPOILER_BOSS_FORMATIONS[bossIndex],
+                SPOILER_BOSS_NAMES[bossIndex], SPOILER_BOSS_NAMES[bossIndex] + " position");        
         bossIconPanel.add(label.getHolder());
         bossLabels.add(label);
         return label;
@@ -2681,11 +2692,16 @@ public final class MaikaTracker extends javax.swing.JFrame {
             String location = matcher.group("Left");
             String boss = matcher.group("Right");
             if(location.equals("(not available)")) {
-                LOG.debug("Boss {} is at the {}", boss, "Waterhag position");
+                location = "WaterHag position";
             }
-            else {
-                LOG.debug("Boss {} is at the {}", boss, location);
-            }
+            
+            BossLabel bossLocation = BossLabel.valueOf(location);
+            BossLabel bossFormation = BossLabel.valueOf(boss);
+            if(bossLocation == null || bossFormation == null)
+                continue;
+            bossFormation.setBossLocation(bossLocation);
+            if(bossLocation.equals(BossLabel.valueOf("Baigan")))
+                bossFormation.setState(1);
         }
         while(!spoilerLogLines.get(logOffset++).equals("TREASURE")) {}
         String prevMap = null;
@@ -2706,19 +2722,9 @@ public final class MaikaTracker extends javax.swing.JFrame {
             String chestID = TreasureChest.valueOf(chest);
             if(chestID == null)
                 chestID = TreasureChest.valueOf(prevMap + ":" + chest);
-            if(chestID == null) {
-                //LOG.debug("Could not get chest ID for {}:{}", prevMap, chest);
-            }            
-            else if (kip == null) {
-                //LOG.debug("Could not get KeyItemPanel for item {}", item);
-            }
-            else if (kip.isKnown()) {
-                //LOG.debug("Item {} was already found earlier in the spoiler log.", item);
-            }
+
             if(chestID != null && kip != null && !kip.isKnown())
                 kip.setLocationInChest(getAtlas().getChestLabel(chestID));
-            
-            
             if(TreasureChest.valueOf(chest) != null) {
                 if(!chestLocations.containsKey(chest)) {
                     chestLocations.put(chest, item);

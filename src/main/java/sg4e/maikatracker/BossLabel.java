@@ -14,6 +14,7 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.awt.image.RescaleOp;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -80,7 +81,7 @@ public class BossLabel extends StativeLabel {
     }
     
     //loadBossIcon("2Soldier", "2Soldier", "Baron Soldiers");
-    public BossLabel(String imageName, String bossName, String spoilerLocation, String spoilerFormation) {
+    public BossLabel(String imageName, String bossName, String ... spoilers) {
         super();
         
         greyBoss = new ImageIcon(MaikaTracker.loadImageResource("bosses/grayscale/FFIVFE-Bosses-" + imageName + "-Gray.png"));
@@ -93,9 +94,8 @@ public class BossLabel extends StativeLabel {
         this.imageName = imageName;
         this.bossName = bossName;
         bossNames.add(this);
-        bossMap.put(imageName.replaceAll("\\d+", ""), this);        
-        bossMap.put(spoilerLocation, this);
-        bossMap.put(spoilerFormation, this);
+        bossMap.put(imageName.replaceAll("\\d+", ""), this);
+        Arrays.asList(spoilers).forEach(spoiler -> bossMap.putIfAbsent(spoiler, this));
         
         addMouseListener(new MouseAdapter() {
             @Override
