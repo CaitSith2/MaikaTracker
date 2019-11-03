@@ -539,8 +539,9 @@ public final class MaikaTracker extends javax.swing.JFrame {
         shopPanelsPanel.add(shopPanel);
         shopPanel.setVisible(shopLocation == baronShopLabel);
         shopMap.put(shopLocation.getText(), shopPanel);
-        if(shopLocation.getName() != null)
-            shopMap.put(shopLocation.getName(), shopPanel);
+        if(shopLocation.getName() != null) {
+            Arrays.asList(shopLocation.getName().split(",")).forEach(loc -> shopMap.put(loc, shopPanel));
+        }
         
         setTextColor(false);
         setBackgroundColor(false);
@@ -1383,7 +1384,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         agartShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         agartShopLabel.setText("Agart");
-        agartShopLabel.setName("Agart Item Stop"); // NOI18N
+        agartShopLabel.setName("Agart Item Shop,Agart Item"); // NOI18N
         agartShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1391,11 +1392,10 @@ public final class MaikaTracker extends javax.swing.JFrame {
         });
         shopLocationsPanel.add(agartShopLabel);
         agartShopLabel.setBounds(50, 10, 49, 22);
-        agartShopLabel.getAccessibleContext().setAccessibleDescription("");
 
         baronShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         baronShopLabel.setText("Baron");
-        baronShopLabel.setName("Baron Item Shop"); // NOI18N
+        baronShopLabel.setName("Baron Item Shop,Baron Item"); // NOI18N
         baronShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1406,7 +1406,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         eblanCaveShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         eblanCaveShopLabel.setText("Eblan Cave");
-        eblanCaveShopLabel.setName("Cave Eblana Item Shop"); // NOI18N
+        eblanCaveShopLabel.setName("Cave Eblana Item Shop,Cave Eblan Item"); // NOI18N
         eblanCaveShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1417,7 +1417,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         fabulShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         fabulShopLabel.setText("Fabul");
-        fabulShopLabel.setName("Fabul Item Shop"); // NOI18N
+        fabulShopLabel.setName("Fabul Item Shop,Fabul Item"); // NOI18N
         fabulShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1428,7 +1428,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         kaipoShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         kaipoShopLabel.setText("Kaipo");
-        kaipoShopLabel.setName("Kaipo Item Shop"); // NOI18N
+        kaipoShopLabel.setName("Kaipo Item Shop,Kaipo Item"); // NOI18N
         kaipoShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1439,7 +1439,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         mysidiaShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         mysidiaShopLabel.setText("Mysidia");
-        mysidiaShopLabel.setName("Mysidia Item Shop"); // NOI18N
+        mysidiaShopLabel.setName("Mysidia Item Shop,Mysidia Item"); // NOI18N
         mysidiaShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1450,7 +1450,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         silveraShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         silveraShopLabel.setText("Silvera");
-        silveraShopLabel.setName("Silvera Item Shop"); // NOI18N
+        silveraShopLabel.setName("Silvera Item Shop,Silvera Item"); // NOI18N
         silveraShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1461,7 +1461,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         troiaItemShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         troiaItemShopLabel.setText("Troia [Item]");
-        troiaItemShopLabel.setName("Toroia Item Shop"); // NOI18N
+        troiaItemShopLabel.setName("Toroia Item Shop,Toroia Item"); // NOI18N
         troiaItemShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1472,7 +1472,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         troiaPubShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         troiaPubShopLabel.setText("Troia [Pub]");
-        troiaPubShopLabel.setName("Toroia Pass Shop"); // NOI18N
+        troiaPubShopLabel.setName("Toroia Pass Shop,Toroia Cafe Item"); // NOI18N
         troiaPubShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1483,7 +1483,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         dwarfCastleShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         dwarfCastleShopLabel.setText("Dwarf Castle");
-        dwarfCastleShopLabel.setName("Castle of Dwarves Item Shop"); // NOI18N
+        dwarfCastleShopLabel.setName("Castle of Dwarves Item Shop,Dwarf Castle Item"); // NOI18N
         dwarfCastleShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1494,7 +1494,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         feymarchShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         feymarchShopLabel.setText("Feymarch");
-        feymarchShopLabel.setName("Town of Monsters Item Shop"); // NOI18N
+        feymarchShopLabel.setName("Town of Monsters Item Shop,Feymarch Item"); // NOI18N
         feymarchShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1505,7 +1505,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         tomaraShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         tomaraShopLabel.setText("Tomara");
-        tomaraShopLabel.setName("Tomra Item Shop"); // NOI18N
+        tomaraShopLabel.setName("Tomra Item Shop,Tomra Item"); // NOI18N
         tomaraShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -1516,7 +1516,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
 
         hummingwayShopLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         hummingwayShopLabel.setText("Hummingway");
-        hummingwayShopLabel.setName("Hummingway Shop"); // NOI18N
+        hummingwayShopLabel.setName("Hummingway Shop,Moon Item"); // NOI18N
         hummingwayShopLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shopLabelClicked(evt);
@@ -2560,12 +2560,16 @@ public final class MaikaTracker extends javax.swing.JFrame {
         updateLogic();
     }
     
-    private static final Pattern SPLITTER = Pattern.compile(
+    private static final Pattern SPLITTER_FE_SPOILER = Pattern.compile(
             "^  (?<Left>.+)(?: [.]+ )(?<Right>.+)$"
     );
     
-    private static final Pattern TREASURE = Pattern.compile(
+    private static final Pattern TREASURE_FE_SPOILER = Pattern.compile(
             "^ {2,33}(?:(?<Map>.{2,28})(?: [.]{2,28} ))?(?<Item>.{2,20})(?: [.]{2,20} )(?<Chest>.{2,64})(?: [.]{2,64} .+)?$"
+    );
+    
+    private static final Pattern ITEMS_FE_SPOILER = Pattern.compile(
+            "^  (?:((?<Shop>.+) [.]+ | +))(?<Item>.+)$"
     );
     
     private void parseFreeEnterpriseSpoilerLog(List<String> spoilerLogLines) {
@@ -2578,7 +2582,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
         resetButton.doClick();
         logOffset += 5;
         
-        while((matcher = SPLITTER.matcher(spoilerLogLines.get(logOffset++))).find()) {
+        while((matcher = SPLITTER_FE_SPOILER.matcher(spoilerLogLines.get(logOffset++))).find()) {
             String location = matcher.group("Right");
             String item = matcher.group("Left");
             KeyItemPanel kip = getPanelForKeyItem(item);
@@ -2675,7 +2679,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
         }
         
         while(!spoilerLogLines.get(logOffset++).equals("CHARACTERS")) {}
-        while((matcher = SPLITTER.matcher(spoilerLogLines.get(logOffset++))).find()) {
+        while((matcher = SPLITTER_FE_SPOILER.matcher(spoilerLogLines.get(logOffset++))).find()) {
             LOG.debug("Location {} has character {}", matcher.group("Left"), matcher.group("Right"));
             if(matcher.group("Left").equals("Starting character 1")) {
                 LOG.debug("Setting First starting character");
@@ -2688,7 +2692,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
         }
         
         while(!spoilerLogLines.get(logOffset++).equals("BOSSES")) {}
-        while((matcher = SPLITTER.matcher(spoilerLogLines.get(logOffset++))).find()) {
+        while((matcher = SPLITTER_FE_SPOILER.matcher(spoilerLogLines.get(logOffset++))).find()) {
             String location = matcher.group("Left");
             String boss = matcher.group("Right");
             if(location.equals("(not available)")) {
@@ -2709,7 +2713,7 @@ public final class MaikaTracker extends javax.swing.JFrame {
         Map<String, String> mapLocations = new HashMap<>();
         
 
-        while((matcher = TREASURE.matcher(spoilerLogLines.get(logOffset++))).find()) {
+        while((matcher = TREASURE_FE_SPOILER.matcher(spoilerLogLines.get(logOffset++))).find()) {
             String map = matcher.group("Map");
             String item = matcher.group("Item");
             String chest = matcher.group("Chest");
@@ -2734,6 +2738,121 @@ public final class MaikaTracker extends javax.swing.JFrame {
                     LOG.debug("MaikaTracker location {} is found in Chest \"{}\", located at \"{}\", Already used by MaikaTracker location {} @ \"{}\"", item, chest, prevMap, chestLocations.get(chest), mapLocations.get(chest));
             }
         }
+        
+        while(!spoilerLogLines.get(logOffset++).equals("SHOPS")) {}
+        
+        ShopPanel sp = null;
+        while(!(line = spoilerLogLines.get(logOffset++)).equals("--------------------------------------------------------------------------------")) {
+            if((matcher = ITEMS_FE_SPOILER.matcher(line)).find()) {
+                if(!Util.isNullOrEmpty(matcher.group("Shop"))) {
+                    if(sp != null)
+                        sp.updateCheckBoxes();
+                    sp = shopMap.get(matcher.group("Shop"));
+                }
+                if(sp == null)
+                    continue;
+                
+                switch(matcher.group("Item").trim()) {
+                    case "HrGlass1":
+                        sp.hourglass1.setSelected(true);
+                        break;
+                    case "HrGlass2":
+                        sp.hourglass2.setSelected(true);
+                        break;
+                    case "HrGlass3":
+                        sp.hourglass3.setSelected(true);
+                        break;
+                    case "SilkWeb":
+                        sp.silkweb.setSelected(true);
+                        break;
+                    case "Bacchus":
+                        sp.bacchus.setSelected(true);
+                        break;
+                    case "Illusion":
+                        sp.illusion.setSelected(true);
+                        break;
+                    case "Tent":
+                        sp.tent.setSelected(true);
+                        break;
+                    case "Kamikaze":
+                        sp.kamikaze.setSelected(true);
+                        break;
+                    case "MuteBell":
+                        sp.mutebell.setSelected(true);
+                        break;
+                    case "ThorRage":
+                        sp.thorrage.setSelected(true);
+                        break;
+                    case "Cure1":
+                        sp.cure1.setSelected(true);
+                        break;
+                    case "Cure2":
+                        sp.cure2.setSelected(true);
+                        break;
+                    case "Cure3":
+                        sp.cure3.setSelected(true);
+                        break;
+                    case "Ether1":
+                        sp.ether1.setSelected(true);
+                        break;
+                    case "Ether2":
+                        sp.ether2.setSelected(true);
+                        break;
+                    case "Exit":
+                        sp.exit.setSelected(true);
+                        break;
+                    case "Cabin":
+                        sp.cabin.setSelected(true);
+                        break;
+                    case "Coffin":
+                        sp.coffin.setSelected(true);
+                        break;
+                    case "StarVeil":
+                        sp.starveil.setSelected(true);
+                        break;
+                    case "MoonVeil":
+                        sp.moonveil.setSelected(true);
+                        break;
+                    case "Life":
+                        sp.life.setSelected(true);
+                        break;
+                    case "Stardust":
+                        sp.stardust.setSelected(true);
+                        break;
+                    case "Elixir":
+                        sp.elixir.setSelected(true);
+                        break;
+                    case "Grimoire":
+                        sp.grimoire.setSelected(true);
+                        break;
+                    case "Pass":
+                        if(getPanelForKeyItem(KeyItemMetadata.PASS).isKnown())
+                            continue;
+                        sp.pass.setSelected(true);
+                        break;
+                    case "AgApple":
+                        sp.agapple.setSelected(true);
+                        break;
+                    case "AuApple":
+                        sp.agapple.setSelected(true);
+                        break;
+                    case "SomaDrop":
+                        sp.somadrop.setSelected(true);
+                        break;
+                    case "Siren":
+                        sp.siren.setSelected(true);
+                        break;
+                    case "GaiaDrum":
+                        sp.gaiadrum.setSelected(true);
+                        break;
+                }
+                
+                //LOG.debug("Shop {} has Item {}", prevShop, matcher.group("Item"));
+            }
+        }
+        if(sp != null)
+            sp.updateCheckBoxes();
+        ShopPanel.UpdateToolTips();
     }
     
     private void parseSpoilerLogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parseSpoilerLogButtonActionPerformed

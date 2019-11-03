@@ -479,7 +479,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Agart"/>
-                    <Property name="name" type="java.lang.String" value="Agart Item Stop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Agart Item Shop,Agart Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -496,7 +496,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Baron"/>
-                    <Property name="name" type="java.lang.String" value="Baron Item Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Baron Item Shop,Baron Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -513,7 +513,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Eblan Cave"/>
-                    <Property name="name" type="java.lang.String" value="Cave Eblana Item Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Cave Eblana Item Shop,Cave Eblan Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -530,7 +530,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Fabul"/>
-                    <Property name="name" type="java.lang.String" value="Fabul Item Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Fabul Item Shop,Fabul Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -547,7 +547,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Kaipo"/>
-                    <Property name="name" type="java.lang.String" value="Kaipo Item Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Kaipo Item Shop,Kaipo Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -564,7 +564,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Mysidia"/>
-                    <Property name="name" type="java.lang.String" value="Mysidia Item Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Mysidia Item Shop,Mysidia Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -581,7 +581,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Silvera"/>
-                    <Property name="name" type="java.lang.String" value="Silvera Item Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Silvera Item Shop,Silvera Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -598,7 +598,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Troia [Item]"/>
-                    <Property name="name" type="java.lang.String" value="Toroia Item Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Toroia Item Shop,Toroia Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -615,7 +615,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Troia [Pub]"/>
-                    <Property name="name" type="java.lang.String" value="Toroia Pass Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Toroia Pass Shop,Toroia Cafe Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -632,7 +632,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Dwarf Castle"/>
-                    <Property name="name" type="java.lang.String" value="Castle of Dwarves Item Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Castle of Dwarves Item Shop,Dwarf Castle Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -649,7 +649,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Feymarch"/>
-                    <Property name="name" type="java.lang.String" value="Town of Monsters Item Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Town of Monsters Item Shop,Feymarch Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -666,7 +666,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Tomara"/>
-                    <Property name="name" type="java.lang.String" value="Tomra Item Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Tomra Item Shop,Tomra Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
@@ -683,7 +683,7 @@
                       <Font name="Tahoma" size="18" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Hummingway"/>
-                    <Property name="name" type="java.lang.String" value="Hummingway Shop" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="Hummingway Shop,Moon Item" noResource="true"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shopLabelClicked"/>
